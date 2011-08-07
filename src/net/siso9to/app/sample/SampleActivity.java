@@ -1,6 +1,7 @@
 package net.siso9to.app.sample;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
@@ -18,6 +19,11 @@ public class SampleActivity extends Activity {
         setContentView(tv, new LayoutParams(
                 LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT));
+        
+		Intent intent = new Intent();
+		intent.putExtra(EXTRA_RESULT, "Hoge");
+		
+        setResult(Activity.RESULT_OK, intent);
    	}
 
 }

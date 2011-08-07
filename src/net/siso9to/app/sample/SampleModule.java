@@ -131,15 +131,15 @@ public class SampleModule extends KrollModule
 			logDebug("onResult() called");
 
 			if (resultCode == Activity.RESULT_CANCELED) {
-				logDebug("scan canceled");
+				logDebug("process canceled");
 				if (cancelCallback != null) {
 					cancelCallback.callAsync();
 				}
 			} else {
-				logDebug("scan successful");
+				logDebug("process successful");
 				String result = data
 						.getStringExtra(SampleActivity.EXTRA_RESULT);
-				logDebug("scan result: " + result);
+				logDebug("process result: " + result);
 				successCallback.callAsync(getDictForResult(result));
 			}
 		}
